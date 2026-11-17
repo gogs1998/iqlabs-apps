@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Duo Remote IQ support</title><meta name="description" content="Duo Remote IQ support"><style>
+:root{--bg:#faf8f5;--fg:#1d1b18;--muted:#6b665e;--rule:#e4dfd6;--accent:#a4471d}
+@media (prefers-color-scheme:dark){:root{--bg:#141311;--fg:#ece8e1;--muted:#9a948a;--rule:#2b2925;--accent:#e08a5c}}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+main{max-width:40rem;margin:0 auto;padding:3rem max(16px,env(safe-area-inset-right)) 2rem max(16px,env(safe-area-inset-left))}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 .3rem;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 2rem}
+h2{font-size:1.1rem;margin:2rem 0 .5rem}
+a{color:var(--accent)}
+ul{padding-left:1.2rem}
+footer{max-width:40rem;margin:0 auto;padding:1.5rem 16px 3rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.9rem}
+footer a{color:var(--muted)}
+</style></head>
+<body><main><h1>Duo Remote IQ support</h1><p class="sub">Help with Duo Remote IQ for iPhone, iPhone Duo and iPad</p>
+<h2>Get in touch</h2><p>Email <a href="mailto:gordon@iqlabs.app">gordon@iqlabs.app</a> with your iPhone or iPad model, iOS version, your Mac's macOS version and what happened. We usually reply within a few days.</p>
+<h2>Setting up your Mac</h2><ol><li>On the Mac, open System Settings → General → Sharing and turn on <strong>Screen Sharing</strong>.</li><li>Click the ⓘ next to Screen Sharing and make sure your user is allowed.</li><li>For an encrypted connection (recommended), also turn on <strong>Remote Login</strong> in the same list.</li><li>In Duo Remote IQ, your Mac usually appears under <strong>On this network</strong>: tap it. Or add it by the address shown in Sharing (for example <code>192.168.1.20</code> or <code>Your-Mac.local</code>), port 5900. Enter your Mac username and password.</li><li>The first time you connect encrypted, the app shows your Mac's identity (a fingerprint). To check it, run <code>ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub</code> in Terminal on the Mac, then tap Trust and Connect.</li></ol>
+<h2>Common questions</h2>
+<p><strong>Does it need an iPhone Duo?</strong> No. It's designed for iPhone Duo: open it in laptop pose and the Mac's screen sits on top with a full-size keyboard and trackpad below. It also works folded, with a keyboard you can show or hide. On any other iPhone running iOS 26 or later, the Mac's screen sits above a smaller keyboard and trackpad. On iPad, the Mac fills the screen, and the keyboard and trackpad slide up when you need them; a hardware keyboard, mouse or trackpad works too.</p>
+<p><strong>Can it connect over the internet?</strong> Use a VPN to your home network and connect with Encrypt on. Don't expose your Mac's Screen Sharing or Remote Login ports directly to the internet.</p>
+<p><strong>Is the connection encrypted?</strong> Yes, when <strong>Encrypt</strong> is on for that Mac (the default for new Macs). The session then runs inside SSH to your Mac's built-in Remote Login, so the screen, your typing and the clipboard are all encrypted, and the app checks it's really your Mac. With Encrypt off (for a Mac without Remote Login), only the sign-in is protected; use that only on a home network you trust.</p><p><strong>How do I send a photo or file to my Mac?</strong> In an encrypted session, open the menu and choose <strong>Send to Mac’s Downloads</strong>. Files up to 200 MB go straight to the Downloads folder. If macOS blocks it, open System Settings → General → Sharing, tap ⓘ next to Remote Login and turn on “Allow full disk access for remote users”.</p>
+<p><strong>Does it work with Windows?</strong> Not yet. It's built and tested for Macs using macOS Screen Sharing. Other VNC servers may work but aren't supported yet.</p>
+<p><strong>It's slow.</strong> Try "Reduced colour" for that computer, or set the Mac's display to a lower resolution in System Settings → Displays. A 5 GHz Wi-Fi connection helps.</p>
+<p><strong>Why did my Mac's clipboard go empty?</strong> With clipboard sharing on, copying emoji or non-Western text on your iPhone can clear the Mac's clipboard. Clipboard sharing handles plain Western text only and is off by default.</p>
+<p><strong>Is there a subscription?</strong> No. There are no in-app payments.</p>
+<p><strong>Open-source licences:</strong> in the app, on the connect screen under Acknowledgements.</p>
+<p><strong>Privacy:</strong> Duo Remote IQ collects no data. See the <a href="privacy.html">privacy policy</a>.</p></main>
+<footer>© 2026 Duo Remote IQ · <a href="https://iqlabs.app">An IQ Labs product</a></footer></body></html>
